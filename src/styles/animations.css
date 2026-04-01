@@ -1,0 +1,179 @@
+/* =============================================
+   TokTik — Keyframe Animations
+   ============================================= */
+
+/* Shimmer animation for skeleton loaders */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Heart burst on double-tap */
+@keyframes heartBurst {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4) translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Spring pop for like/bookmark icons */
+@keyframes springPop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Fade in transition */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade out transition */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Slide up for bottom sheets */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Slide down for sheet dismiss */
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Stagger in for feed entry */
+@keyframes staggerIn {
+  0% {
+    transform: translateY(24px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Music disc spin */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Play/pause icon overlay fade */
+@keyframes playPauseFade {
+  0% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    opacity: 0.9;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* Music ticker scroll */
+@keyframes tickerScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* =============================================
+   Animation Utility Classes
+   ============================================= */
+
+.animate-shimmer {
+  animation: shimmer 1.4s infinite linear;
+}
+
+.animate-heart-burst {
+  animation: heartBurst 600ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-spring-pop {
+  animation: springPop 240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.animate-fade-in {
+  animation: fadeIn 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-up {
+  animation: slideUp 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-slide-down {
+  animation: slideDown 360ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-spin-disc {
+  animation: spin 4s linear infinite;
+}
+
+.animate-play-pause {
+  animation: playPauseFade 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-ticker {
+  animation: tickerScroll 8s linear infinite;
+}
+
+/* Paused state for animations (used by MusicDisc) */
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+.animation-running {
+  animation-play-state: running  !important;
+}

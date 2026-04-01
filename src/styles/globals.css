@@ -1,0 +1,159 @@
+/* =============================================
+   TokTik — Global Styles & Design Tokens
+   ============================================= */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   CSS Custom Properties (Design Tokens)
+   ============================================= */
+:root {
+  /* Colors */
+  --color-bg: #FAFAF8;
+  --color-surface: #FFFFFF;
+  --color-surface-raised: #F5F4F0;
+  --color-border: #E8E6E0;
+  --color-text-primary: #1A1917;
+  --color-text-secondary: #6B6860;
+  --color-text-tertiary: #A8A49C;
+  --color-accent: #FF6B6B;
+  --color-accent-soft: #FFF0F0;
+  --color-follow: #1A1917;
+  --color-shimmer-start: #F0EEE8;
+  --color-shimmer-end: #E8E6DE;
+
+  /* Spacing */
+  --space-unit: 4px;
+  --action-bar-gap: 24px;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-micro: 120ms;
+  --duration-standard: 240ms;
+  --duration-sheet: 360ms;
+
+  /* Safe areas */
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-area-top: env(safe-area-inset-top, 0px);
+
+  /* Z-index layers */
+  --z-video: 1;
+  --z-overlay: 10;
+  --z-action-bar: 20;
+  --z-user-info: 20;
+  --z-music-disc: 20;
+  --z-nav: 50;
+  --z-sheet-backdrop: 90;
+  --z-sheet: 100;
+  --z-toast: 110;
+}
+
+/* =============================================
+   CSS Reset & Base Styles
+   ============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  overflow-x: hidden;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prevent iOS text selection highlighting on interactive elements */
+button,
+a,
+[role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Set minimum tap target size */
+button,
+a,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Focus visible styles for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* Remove default focus styles for non-keyboard interactions */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Image defaults */
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Scrollbar styling (optional, webkit only) */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* =============================================
+   Reduced Motion Preferences
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

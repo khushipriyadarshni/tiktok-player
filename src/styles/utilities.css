@@ -1,0 +1,108 @@
+/* =============================================
+   TokTik — Utility Classes
+   (Things Tailwind doesn't cover natively)
+   ============================================= */
+
+/* Full viewport height using dvh for mobile browser chrome */
+.h-screen-dvh {
+  height: 100dvh;
+}
+
+/* Safe area padding for bottom nav */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Scroll snap container for the feed */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.snap-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scroll snap child */
+.snap-child {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Text shadow for video overlays */
+.text-shadow-video {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Backdrop blur for bottom nav */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* Skeleton shimmer base */
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-shimmer-start);
+  border-radius: var(--radius-sm);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-shimmer-end),
+    transparent
+  );
+  animation: shimmer 1.4s infinite linear;
+}
+
+/* Truncate text to n lines */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* No scrollbar utility */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Aspect ratio helper for video grid */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* Touch action utility for gesture areas */
+.touch-none {
+  touch-action: none;
+}
+
+.touch-pan-y {
+  touch-action: pan-y;
+}
